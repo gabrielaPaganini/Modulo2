@@ -39,4 +39,7 @@ SELECT * FROM tb_produto WHERE valor > 3 OR valor < 60;
 SELECT * FROM tb_produto WHERE peca LIKE  'c%';
 
 SELECT peca, animal, marca, kg, valor FROM tb_produto
+ INNER JOIN tb_categoria ON tb_categoria.id_categoria = tb_produto.categoria_id;
+
+SELECT peca, animal, marca, kg, valor FROM tb_produto
  INNER JOIN tb_categoria ON tb_categoria.id_categoria = tb_produto.categoria_id WHERE animal = 'peixe';
