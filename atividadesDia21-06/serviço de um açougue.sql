@@ -28,7 +28,7 @@ FOREIGN KEY (categoria_id) REFERENCES tb_categoria (id_categoria)
 );
 
 INSERT INTO tb_produto(peca, kg, marca, valor, categoria_id)
-VALUES ('coxao mole', 1, 'seara', 28.0, 1),
+VALUES ('contrafilé', 1, 'meat', 38.0, 1),
 	   ('linguado', 1, 'fisher', 47.9, 2),
        ('bacalhau', 1, 'fesher', 70.0, 2),
        ('bisteca', 3, 'meat', 70.9, 3),
