@@ -19,7 +19,7 @@ public class Categoria {
 	
 	@ManyToOne
 	@JsonIgnoreProperties("categoria")
-	public String remedio;
+	private Produto produto;
 	
 	@NotNull
 	public String receita;
@@ -32,12 +32,16 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public String getRemedio() {
-		return remedio;
+	public Produto getRemedio() {
+		return produto;
 	}
 
-	public void setRemedio(String remedio) {
-		this.remedio = remedio;
+	public void setRemedio(Produto remedio) {
+		this.produto = remedio;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getReceita() {
