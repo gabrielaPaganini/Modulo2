@@ -1,9 +1,13 @@
 package com.minhaloja.games.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -18,11 +22,19 @@ public class Categoria {
 	@NotNull
 	private String descricao;
 	
-	@NotNull
-	private String jogo;
+	@OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
+	private List<Produto> produto;
 
 	public long getId() {
 		return id;
+	}
+
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
 
 	public void setId(long id) {
@@ -37,11 +49,4 @@ public class Categoria {
 		this.descricao = descricao;
 	}
 
-	public String getJogo() {
-		return jogo;
-	}
-
-	public void setJogo(String jogo) {
-		this.jogo = jogo;
-	}
 }
